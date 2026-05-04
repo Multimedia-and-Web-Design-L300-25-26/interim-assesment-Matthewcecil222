@@ -50,4 +50,11 @@ Server running on port 5000
 Restarting 'src/server.js'
 MongoDB connected
 Server running on port 5000
+Restarting 'src/server.js'
+Restarting 'src/server.js'
+MongoDB connected
+Failed running 'src/server.js'. Waiting for file changes before restarting...
 ailed running 'src/server.js'. Waiting for file changes before restarting...
+Restarting 'src/server.js'
+MongoDB connected
+Server running on port 5000
