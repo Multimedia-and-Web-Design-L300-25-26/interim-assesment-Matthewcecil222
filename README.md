@@ -1,66 +1,260 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/bMYWKvYv)
-# Interim Assessment: Full-Stack Integration – Coinbase Clone
+# Coinbase Clone Backend API
 
-In this assignment, you will integrate your cloned coinbase frontend with a backend API to build a functional cryptocurrency platform with authentication and dynamic data.
+This repository contains the backend API for the Coinbase clone interim assessment. It uses Node.js, Express, MongoDB, Mongoose, and JWT authentication with HTTP-only cookie support.
 
-You are required to implement the features using Node.js with MongoDB as the database. Create proper data models (schemas) and structure your project using best practices (models, routes, and controllers). All features must be exposed through RESTful APIs for the frontend to consume.
+The API now includes:
 
-## 1. Authentication System (JWT-Based)
+- protected profile access with JWT
+- crypto listing and creation endpoints
+- OpenAPI-style JSON docs at `/api/docs`
+- startup environment validation for safer deployment
 
-### Register (GET /register)
+The repository now also contains the React frontend inside [frontend](/c:/Users/cecil/Desktop/lab/interim-assesment-Matthewcecil222/frontend).
 
-Create a user account using:
+## Stack
 
-- Name
-- Email
-- Password
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT
+- bcrypt
 
-Send data to the backend API and ensure it is properly stored in the database. Also handle success and error responses appropriately, returning clear and meaningful feedback based on the outcome of each request.
+## Project Structure
 
-### Login (GET /login)
+```text
+src/
+  config/
+  controllers/
+  middleware/
+  models/
+  routes/
+  seeds/
+  utils/
+  app.js
+  server.js
+```
 
-Authenticate users using email and password, store the returned JWT token securely (preferably using HTTP-only cookies), and redirect the user to the homepage after a successful login.
+## Setup
 
-## 2. Protected User Profile Page
+1. Install dependencies:
 
-### Create a User Dashboard/Profile Page(GET /profile)
+```bash
+npm install
+```
 
-Fetch and display:
+2. Create your `.env` file from the example:
 
-- User name
-- Email
-- Any other relevant info from backend
+```bash
+cp .env.example .env
+```
 
-**NOTE:** This page must be protected and only accessible to authenticated users with a valid JWT token. If the user is not authenticated, they should be redirected to the login page.
+3. Update the environment variables:
 
-## 3. Crypto Data Integration
+```env
+PORT=5000
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_super_secret_key
+JWT_EXPIRES_IN=7d
+CLIENT_URL=http://localhost:3000
+NODE_ENV=development
+```
 
-### GET /crypto (All Tradable Cryptocurrencies)
+4. Start the app:
 
-Fetch all available cryptocurrencies from the backend and display them on the frontend.
+```bash
+npm run dev
+```
 
-### GET /crypto/gainers (Top Gainers)
+5. Seed sample cryptocurrencies if needed:
 
-Fetch cryptocurrencies with the highest percentage increase in price, sorted from highest to lowest.
+```bash
+npm run seed
+```
 
-### GET /crypto/new (New Listings)
+6. Run a simple smoke check after the server starts:
 
-Fetch the most recently added cryptocurrencies, sorted from newest to oldest.
+```bash
+npm run smoke
+```
 
-### POST /crypto (Add New Cryptocurrency)
+7. Run the automated tests:
 
-Create a new cryptocurrency using:
+```bash
+npm test
+```
 
-- Name
-- Symbol
-- Price
-- Image
-- 24h Change (percentage change in price over the last 24 hours, e.g. +2.5)
+## Frontend Setup
 
-Send data to the backend API and ensure it is properly stored in the database (MongoDB). Also handle success and error responses appropriately, returning clear and meaningful feedback based on the outcome of each request.
+The Coinbase clone frontend lives in the `frontend` folder.
 
----
+1. Create `frontend/.env` from [frontend/.env.example](/c:/Users/cecil/Desktop/lab/interim-assesment-Matthewcecil222/frontend/.env.example)
 
-Push your backend code to GitHub Classroom, deploy the backend (recommended: Render), and integrate it into your Coinbase clone frontend repository. After completing the integration, deploy the updated frontend as well. Finally, submit the links to your deployed backend, deployed frontend, and your updated Coinbase clone repository via the Google Form attached.
+```env
+VITE_API_URL=http://localhost:5000
+```
 
-**NOTE:** Ensure that all submitted links are accurate and working, as no marks will be awarded for invalid or inaccessible submissions.
+2. Start the frontend:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+The frontend runs on `http://localhost:5173` by default.
+
+## API Base URL
+
+```text
+http://localhost:5000/api
+```
+
+The server also exposes assignment-friendly direct routes like `/register`, `/login`, `/profile`, and `/crypto` if you prefer not to prepend `/api` in the frontend.
+
+## Endpoints
+
+### Health
+
+- `GET /health`
+- `GET /api/health`
+- `GET /`
+- `GET /api/docs`
+
+### Authentication
+
+- `POST /auth/register`
+- `POST /auth/login`
+- `POST /auth/logout`
+- `POST /register`
+- `POST /login`
+- `POST /logout`
+
+Register body:
+
+```json
+{
+  "name": "Jane Doe",
+  "email": "jane@example.com",
+  "password": "password123"
+}
+```
+
+Login body:
+
+```json
+{
+  "email": "jane@example.com",
+  "password": "password123"
+}
+```
+
+### Protected User Route
+
+- `GET /users/profile`
+- `GET /profile`
+
+Send the JWT using:
+
+- the HTTP-only `token` cookie
+- or `Authorization: Bearer <token>`
+
+### Cryptocurrency Routes
+
+- `GET /crypto`
+- `GET /crypto/gainers`
+- `GET /crypto/new`
+- `POST /crypto`
+
+Optional query parameter for list routes:
+
+- `limit`
+
+Create crypto body:
+
+```json
+{
+  "name": "Bitcoin",
+  "symbol": "BTC",
+  "price": 64250.35,
+  "image": "https://example.com/bitcoin.png",
+  "change24h": 3.4
+}
+```
+
+## Frontend Integration
+
+Your Coinbase clone frontend now calls this backend with `credentials: "include"` for authenticated requests.
+
+Login example:
+
+```js
+await fetch("http://localhost:5000/api/auth/login", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  credentials: "include",
+  body: JSON.stringify({
+    email,
+    password
+  })
+});
+```
+
+Profile example:
+
+```js
+await fetch("http://localhost:5000/api/users/profile", {
+  method: "GET",
+  credentials: "include"
+});
+```
+
+Crypto example:
+
+```js
+await fetch("http://localhost:5000/api/crypto");
+```
+
+You can also use the sample requests in [requests.http](/c:/Users/cecil/Desktop/lab/interim-assesment-Matthewcecil222/requests.http) with the REST Client extension in VS Code or any similar API tool.
+
+For a quick machine-readable route summary, open `http://localhost:5000/api/docs` after starting the server.
+
+Frontend routes now include:
+
+- `/signin`
+- `/signup`
+- `/profile` protected dashboard
+- `/explore`
+- `/asset/:id`
+
+## Deployment Notes
+
+Recommended backend deployment: Render.
+
+This repo includes a [render.yaml](/c:/Users/cecil/Desktop/lab/interim-assesment-Matthewcecil222/render.yaml) file to make deployment setup easier.
+
+Set the following environment variables on the server:
+
+- `MONGODB_URI`
+- `JWT_SECRET`
+- `JWT_EXPIRES_IN`
+- `CLIENT_URL`
+- `NODE_ENV=production`
+
+After deploying the backend, update your frontend API base URL to the deployed backend URL and redeploy the frontend.
+
+## Testing
+
+This project includes built-in Node.js tests in [tests/app.test.js](/c:/Users/cecil/Desktop/lab/interim-assesment-Matthewcecil222/tests/app.test.js) and [tests/validateEnv.test.js](/c:/Users/cecil/Desktop/lab/interim-assesment-Matthewcecil222/tests/validateEnv.test.js).
+
+They currently verify:
+
+- root route response
+- health routes
+- docs route
+- JSON 404 handling
+- protected profile rejection without a token
+- required environment variable validation

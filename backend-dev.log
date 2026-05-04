@@ -1,0 +1,53 @@
+
+> coinbase-clone-backend@1.0.0 dev
+> node --watch src/server.js
+
+Restarting 'src/server.js'
+MongoDB connected
+Failed running 'src/server.js'. Waiting for file changes before restarting...
+Restarting 'src/server.js'
+Restarting 'src/server.js'
+MongoDB connected
+Failed running 'src/server.jsRestarting 'src/server.js'
+MongoDB connected
+ServRestarting 'src/server.jResMongoDB connected
+Server running on port 5FailRestarting 'src/server.js'
+MongoDB connected
+Server running on port 5000
+Failed running 'src/server.js'. Waiting for file changes before restarting...
+Restarting 'src/server.js'
+Restarting 'src/server.js'
+Restarting 'src/server.js'
+Restarting 'src/server.js'
+MongoDB connected
+Server running on port 5000
+Restarting 'src/server.js'
+Restarting 'src/server.js'
+Restarting 'src/server.js'
+Restarting 'src/server.js'
+MongoDB connected
+Server running on port 5000
+Restarting 'src/server.js'
+MongoDB connected
+Failed running 'src/server.js'. Waiting for file changes before restarting...
+Restarting 'src/server.js'
+MongoDB connected
+Failed running 'src/server.jRestarting 'src/server.js'
+Restarting 'src/server.js'
+Restarting 'src/server.js'
+Restarting 'src/server.js'
+MongoDB connected
+Failed running 'src/server.js'. Waiting for file changes before restarting...
+Restarting 'src/server.js'
+MongoDB connected
+Failed running 'src/server.jRestarting 'src/server.js'
+Restarting 'src/server.js'
+MongoDB connected
+Server running on port 5000
+Restarting 'src/server.js'
+MongoDB connected
+Server running on port 5000
+Restarting 'src/server.js'
+MongoDB connected
+Server running on port 5000
+ailed running 'src/server.js'. Waiting for file changes before restarting...

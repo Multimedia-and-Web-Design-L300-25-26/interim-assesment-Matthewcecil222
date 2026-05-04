@@ -1,0 +1,61 @@
+@baseUrl = http://localhost:5000
+@json = Content-Type: application/json
+
+### Health
+GET {{baseUrl}}/health
+
+### API Health
+GET {{baseUrl}}/api/health
+
+### Register
+POST {{baseUrl}}/register
+{{json}}
+
+{
+  "name": "Jane Doe",
+  "email": "jane@example.com",
+  "password": "password123"
+}
+
+### Login
+POST {{baseUrl}}/login
+{{json}}
+
+{
+  "email": "jane@example.com",
+  "password": "password123"
+}
+
+### Get Profile With Bearer Token
+GET {{baseUrl}}/profile
+Authorization: Bearer REPLACE_WITH_TOKEN
+
+### Get All Crypto
+GET {{baseUrl}}/crypto
+
+### Get All Crypto With Limit
+GET {{baseUrl}}/crypto?limit=5
+
+### Get Top Gainers
+GET {{baseUrl}}/crypto/gainers
+
+### Get Top Gainers With Limit
+GET {{baseUrl}}/crypto/gainers?limit=3
+
+### Get New Listings
+GET {{baseUrl}}/crypto/new
+
+### Get New Listings With Limit
+GET {{baseUrl}}/crypto/new?limit=3
+
+### Create Crypto
+POST {{baseUrl}}/crypto
+{{json}}
+
+{
+  "name": "Litecoin",
+  "symbol": "LTC",
+  "price": 84.23,
+  "image": "https://example.com/litecoin.png",
+  "change24h": 4.2
+}

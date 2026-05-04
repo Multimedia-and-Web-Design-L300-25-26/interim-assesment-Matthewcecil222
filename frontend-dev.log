@@ -1,0 +1,41 @@
+
+> coinbase-clone@0.0.0 dev
+> vite --host 0.0.0.0
+
+[2m03:30:35[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m Re-optimizing dependencies because vite config has changed
+
+  [32m[1mVITE[22m v7.3.1[39m  [2mready in [0m[1m791[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://172.20.10.2:[1m5173[22m/[39m
+[2m04:20:43[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[2m04:21:14[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/common/Card.jsx[22m
+[2m04:21:14[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/layout/Navbar.jsx, /src/index.css[22m
+[2m04:21:14[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/common/Button.jsx[22m
+[2m04:22:24[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/Home.jsx, /src/index.css[22m
+[2m04:22:24[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/Explore.jsx, /src/index.css[22m
+[2m04:22:24[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/AssetDetail.jsx, /src/index.css[22m
+[2m04:23:45[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/common/Cluster.jsx[22m
+[2m04:23:45[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/layout/Navbar.jsx, /src/index.css[22m
+[2m04:23:45[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/Profile.jsx, /src/index.css[22m
+[2m04:23:45[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[2m04:23:45[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/auth/ProtectedRoute.jsx, /src/index.css[22m
+[2m04:23:45[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/pages/AssetDetail.jsx, /src/pages/Explore.jsx, /src/pages/Home.jsx[22m
+[2m04:23:45[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/context/AuthContext.jsx, /src/index.css[22m
+[2m04:23:45[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/SignIn.jsx, /src/index.css[22m
+[2m04:23:45[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/SignUp.jsx, /src/index.css[22m
+[2m04:24:36[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/context/AuthContext.jsx, /src/index.css[22m
+[2m04:24:36[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/common/Cluster.jsx[22m
+[2m04:24:36[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[2m04:55:06[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/Home.jsx, /src/index.css[22m
+[2m04:55:18[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/Home.jsx, /src/index.css[22m
+[2m04:55:42[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/Home.jsx, /src/index.css[22m
+[2m04:56:04[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/Explore.jsx, /src/index.css[22m
+[2m04:56:23[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/Explore.jsx, /src/index.css[22m
+[2m04:56:38[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/AssetDetail.jsx, /src/index.css[22m
+[2m04:56:55[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/AssetDetail.jsx, /src/index.css[22m
+[2m04:57:09[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/crypto/CryptoRow.jsx[22m
+[2m04:57:26[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/crypto/CryptoRow.jsx[22m
+[2m04:57:40[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/Profile.jsx, /src/index.css[22m
+[2m04:57:51[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/Profile.jsx, /src/index.css[22m
+[2m04:58:02[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/Profile.jsx, /src/index.css[22m
