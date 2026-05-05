@@ -100,12 +100,6 @@ Emitted 'error' event on Server instance at:
 }
 
 Node.js v24.13.0
-en',
-  address: '::',
-  port: 5000
-}
-
-Node.js v24.13.0
 node:events:486
       throw er; // Unhandled 'error' event
       ^
@@ -120,6 +114,33 @@ Error: listen EADDRINUSE: address already in use :::5000
 Emitted 'error' event on Server instance at:
     at emitErrorNT (node:net:1976:8)
     at process.processTicksAndRejections (node:internal/process/task_queues:89:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 5000
+}
+
+Node.js v24.13.0
+node:internal/modules/cjs/loader:1424
+  throw err;
+  ^
+
+Error: Cannot find module 'C:\Users\cecil\Desktop\lab\interim-assesment-Matthewcecil222\src\server.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1421:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1059:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1064:22)
+    at Module._load (node:internal/modules/cjs/loader:1227:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v24.13.0
+rnal/process/task_queues:89:21) {
   code: 'EADDRINUSE',
   errno: -4091,
   syscall: 'listen',
@@ -169,6 +190,24 @@ Emitted 'error' event on Server instance at:
   syscall: 'listen',
   address: '::',
   port: 5000
+}
+
+Node.js v24.13.0
+node:internal/modules/cjs/loader:1424
+  throw err;
+  ^
+
+Error: Cannot find module 'C:\Users\cecil\Desktop\lab\interim-assesment-Matthewcecil222\src\server.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1421:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1059:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1064:22)
+    at Module._load (node:internal/modules/cjs/loader:1227:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
 }
 
 Node.js v24.13.0

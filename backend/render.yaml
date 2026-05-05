@@ -6,6 +6,8 @@ services:
     buildCommand: npm install
     startCommand: npm start
     autoDeploy: true
+    rootDir: /
+    dir: backend
     envVars:
       - key: NODE_ENV
         value: production
